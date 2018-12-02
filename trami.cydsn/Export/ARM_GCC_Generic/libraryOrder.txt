@@ -1,0 +1,2 @@
+.\Export\ARM_GCC_Generic\BLE_v3_50\gccCyBLEStack_BLE_SOC_PERIPHERAL.a
+.\Export\ARM_GCC_Generic\CapSense_CSD_P4_v2_60\CapsenseP4Library_GCC.a

@@ -1340,6 +1340,13 @@
 </link_deps_times>
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
+<dataGuid v="8b7054c8-ee0e-4f1f-82fc-855e0b008a8f">
+<CyGuid_8b7054c8-ee0e-4f1f-82fc-855e0b008a8f type_name="CyDesigner.Common.ProjMgmt.IDE.CyIDEPrjUserSettings" version="1" LastExported=".\makefile">
+<ExportedPaths>
+<v>.\makefile</v>
+</ExportedPaths>
+</CyGuid_8b7054c8-ee0e-4f1f-82fc-855e0b008a8f>
+</dataGuid>
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <properties />
