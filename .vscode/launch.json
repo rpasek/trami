@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/trami.cydsn/output/debug/CortexM0/trami.elf",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/Program Files (x86)/Cypress/PSoC Creator/4.2/PSoC Creator/import/gnu/arm/5.4.1/bin/arm-none-eabi-gdb.exe",
+            "targetArchitecture": "arm",
+            "setupCommands": [
+                {
+                    "text": "target remote | cypsocdebugger -t PPIO:KitProg/181A0EB3031D6400:1",
+                },
+            ]
+        }
+    ]
+}
