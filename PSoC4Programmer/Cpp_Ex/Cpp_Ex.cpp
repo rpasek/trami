@@ -52,6 +52,7 @@ using namespace std;
 
 IDispatch* pIDispatch = NULL;
 std::string sErrorMsg;
+char InputPath[MAX_PATH] = "\\..\\HEX-file\\PSoC4.hex";
 
 //DispIDs for each function used in the Example
 //They are initialized once after COM-object is created by GetDispIDsByName() function
@@ -1533,7 +1534,7 @@ long ProgramAll()
 	TCHAR buffer[MAX_PATH];
 	GetCurrentDirectory(sizeof(buffer),buffer);
 	std::string filePath(CW2A(buffer).m_psz);
-	filePath.append("\\..\\HEX-file\\PSoC4A.hex");
+	filePath.append(InputPath);
 
     //Port Initialization
     hr = InitializePort();
@@ -1694,11 +1695,18 @@ long Execute()
 int _tmain(int argc, _TCHAR* argv[])
 {
 	HRESULT hr = 0;
+  int Result = 1;
+
+  if (argc == 2)
+  {
+    wcstombs(InputPath, argv[1], sizeof(InputPath));
+  }
+
 	cout << "Initializing COM" << endl;
 	if ( FAILED(CoInitialize(NULL)))
 	{
 		cout << "Unable to initialize COM" << endl;
-		return 0;
+		return Result;
 	}
 
 	//Use Version Independent Prog ID to instantiate COM-object
@@ -1712,7 +1720,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	{
 		cout << "Failed to get class id for PSoC Programmer COM object !" << endl;
 		CoUninitialize();
-		return 0;
+		return Result;
 	}
 
 	hr = ::CoCreateInstance(clsid, NULL, CLSCTX_SERVER, IID_IDispatch, (void**)&pIDispatch);
@@ -1720,14 +1728,14 @@ int _tmain(int argc, _TCHAR* argv[])
 	{
 		cout << "Failed to create instance of PSoC Programmer COM object !" << endl;
 		CoUninitialize();
-		return 0;
+		return Result;
 	}
 	hr = GetDispIDsByName();
 	if (FAILED(hr))
 	{
 		cout <<"Failed to get DispIDs of used methods";
 		CoUninitialize();
-		return 0;
+		return Result;
 	}
 
 	ppStartSelfTerminator(GetCurrentProcessId());
@@ -1737,13 +1745,21 @@ int _tmain(int argc, _TCHAR* argv[])
 	//Execute actual task of the example
 	hr = Execute(); 
 
-	if (SUCCEEDED(hr)) str = "Succeeded!";
-	else {str = "Failed! "; str.append(GetErrorMsg());}
+  if (SUCCEEDED(hr))
+  {
+    str = "Succeeded!";
+    Result = 0;
+  }
+	else 
+  {
+    str = "Failed! "; 
+    str.append(GetErrorMsg());
+  }
 	cout << str.c_str() << endl;
 	cout << "Shutting down COM" << endl;
 	
 	pIDispatch->Release();
 	CoUninitialize();
-	getch();
-	return 0;
+
+	return Result;
 }
