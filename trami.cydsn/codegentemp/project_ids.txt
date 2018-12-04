@@ -1,6 +1,8 @@
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|10beb28f-527a-4a47-81f8-27d4af80a2cc
-C:\Users\rpasek\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|860f5690-da6c-4142-9184-daea6f656cbf
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|b30f5903-5cdb-443e-b2f4-25f9b756b389
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|b6895baa-f0ba-49b7-92e0-0dcb97b498e7
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|372f2be1-053e-4019-b499-e3609af4b190
-C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\trami.cyprj|e6152a08-e6ea-4e66-a41c-7e735f36d74b
+C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\trami.cyprj|0e01ead4-adb9-4f9a-8db7-32c5617d8433
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|1f217b1f-30f0-4837-9f9b-bf34f9672bc1
+C:\Users\rpasek\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|c5019a20-8833-4946-8995-1550f4543cd3
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|95a2687b-674c-41e1-9a39-5610fe4cd710
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|85244765-c0b0-4d34-81c5-ba42c5c4067c
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|9fb201bd-39a2-46aa-9f8d-f3290de84c13
+C:\Users\rpasek\Documents\PSoC Creator\4.2\Devices\psoc4\PSoC4AnalogDevice\psoc4arch.cydsn\psoc4arch.cyprj|31f97822-b6eb-43a2-9c78-64200ea849f9
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|4eb6f351-6d1f-4c13-bd3f-d1a6baafe1b8

@@ -47,6 +47,28 @@
 #include <project.h>
 #include <BLEApplications.h>
 #include <HandleLowPower.h>
+#include "CyFlash.h"
+/* Function prototypes */
+cystatus Em_EEPROM_Write(const uint8 srcBuf[], const uint8 eepromPtr[], uint32 byteCount);
+
+/* Project Constants */
+/* CapSense tuning constants */
+#define SENSOR_MODDAC       (150u)        /* Modulation DAC current setting */
+#define SENSOR_CMPDAC       (20u)         /* Compensation DAC current setting */
+#define SENSOR_SENDIV       (9u)          /* Sensor clock divider */
+#define SENSOR_MODDIV       (9u)          /* Modulation clock divider */
+/* Liquid Level constants */
+#define NUMSENSORS          (12u)          /* Number of CapSense sensors */
+#define SENSORMAX           (600u)         /* Maximum difference count of each calibrated sensor at full level */
+#define SENSORLIMIT         (SENSORMAX / 2) /* Threshold for determining if a sensor is submerged. Set to half of SENSORMAX value */
+#define LEVELMM_MAX         (153u)         /* Max sensor height in mm */
+#define SENSORHEIGHT        ((LEVELMM_MAX * 256) / (NUMSENSORS - 1)) /* Height of a single sensor. Fixed precision 24.8 */
+/* EEPROM constants */
+#define Em_EEPROM_FLASH_BASE_ADDR        (CYDEV_FLASH_BASE)
+#define Em_EEPROM_FLASH_SIZE             (CYDEV_FLASH_SIZE)
+#define Em_EEPROM_FLASH_END_ADDR         (Em_EEPROM_FLASH_BASE_ADDR + Em_EEPROM_FLASH_SIZE)
+#define Em_EEPROM_ROWS_IN_ARRAY          (CY_FLASH_SIZEOF_ARRAY/CY_FLASH_SIZEOF_ROW)
+
 
 /***************************Macro Declarations*******************************/
 /* Respective indexes of color co-ordinates in the 4-byte data received

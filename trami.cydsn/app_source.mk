@@ -3,7 +3,8 @@
 APP_C_SOURCE_CortexM0=\
 	main.c\
 	BLEApplications.c\
-	HandleLowPower.c
+	HandleLowPower.c\
+	interface.c
 
 APP_ASM_SOURCE_CortexM0=\
 

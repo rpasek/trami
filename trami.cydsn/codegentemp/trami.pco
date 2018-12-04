@@ -1,5 +1,5 @@
 # trami
-# 2018-12-02 04:23:24Z
+# 2018-12-04 03:45:02Z
 
 # IO_6@[IOP=(0)][IoId=(6)] is reserved: SWDDebugEnabled
 dont_use_io iocell 0 6
@@ -11,22 +11,31 @@ dont_use_io iocell 6 0
 dont_use_io iocell 6 1
 set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
 set_location "ClockBlock" m0s8clockblockcell -1 -1 0
-set_io "\CapSense:Cmod(0)\" iocell 4 0
-set_io "\CapSense:Sns(0)\" iocell 2 1
-set_io "\CapSense:Sns(1)\" iocell 2 2
-set_io "\CapSense:Sns(2)\" iocell 2 3
-set_io "\CapSense:Sns(3)\" iocell 2 4
-set_io "\CapSense:Sns(4)\" iocell 2 5
+set_io "\CapSense_CSD:Cmod(0)\" iocell 4 0
+set_io "\CapSense_CSD:Sns(0)\" iocell 3 4
+set_io "\CapSense_CSD:Sns(1)\" iocell 3 3
+set_io "\CapSense_CSD:Sns(2)\" iocell 3 2
+set_io "\CapSense_CSD:Sns(3)\" iocell 2 5
+set_io "\CapSense_CSD:Sns(4)\" iocell 2 3
+set_io "\CapSense_CSD:Sns(5)\" iocell 0 4
+set_io "\CapSense_CSD:Sns(6)\" iocell 0 5
+set_io "\CapSense_CSD:Sns(7)\" iocell 1 0
+set_io "\CapSense_CSD:Sns(8)\" iocell 1 1
+set_io "\CapSense_CSD:Sns(9)\" iocell 1 2
+set_io "\CapSense_CSD:Sns(10)\" iocell 1 3
+set_io "\CapSense_CSD:Sns(11)\" iocell 1 7
 set_io "BLUE(0)" iocell 3 7
 set_io "RED(0)" iocell 2 6
 set_io "GREEN(0)" iocell 3 6
 set_location "User_Button" logicalport -1 -1 2
 set_io "User_Button(0)" iocell 2 7
-set_location "\CapSense:CSD_FFB\" p4csdcell -1 -1 0
-set_location "\CapSense:ISR\" interrupt -1 -1 16
-set_location "\CapSense:IDAC2:cy_psoc4_idac\" p4csidac7cell -1 -1 0
-set_location "__ONE__" 0 0 0 1
-set_location "\CapSense:IDAC1:cy_psoc4_idac\" p4csidac8cell -1 -1 0
+set_io "\UART:tx(0)\" iocell 1 5
+set_io "\UART:rx(0)\" iocell 1 4
+set_location "\CapSense_CSD:CSD_FFB\" p4csdcell -1 -1 0
+set_location "\CapSense_CSD:ISR\" interrupt -1 -1 16
+set_location "\CapSense_CSD:IDAC2:cy_psoc4_idac\" p4csidac7cell -1 -1 0
+set_location "__ONE__" 1 0 1 1
+set_location "\CapSense_CSD:IDAC1:cy_psoc4_idac\" p4csidac8cell -1 -1 0
 set_location "\BLE:cy_m0s8_ble\" p4blecell -1 -1 0
 set_location "\BLE:bless_isr\" interrupt -1 -1 12
 set_location "\PrISM_1:SyncCtl:ControlReg\" 0 0 6
@@ -34,8 +43,10 @@ set_location "\PrISM_1:sC8:PrISMdp:u0\" 0 0 2
 set_location "\PrISM_2:SyncCtl:ControlReg\" 1 0 6
 set_location "\PrISM_2:sC8:PrISMdp:u0\" 1 0 2
 set_location "isr_button" interrupt -1 -1 2
-set_location "\PrISM_1:enable_final_reg\" 0 0 0 0
+set_location "\UART:SCB_IRQ\" interrupt -1 -1 9
+set_location "\UART:SCB\" m0s8scbcell -1 -1 0
+set_location "\PrISM_1:enable_final_reg\" 0 0 0 1
 set_location "Net_79" 0 0 1 0
 set_location "Net_80" 0 0 1 1
 set_location "\PrISM_2:enable_final_reg\" 1 0 0 1
-set_location "Net_83" 1 0 1 2
+set_location "Net_83" 1 0 1 3

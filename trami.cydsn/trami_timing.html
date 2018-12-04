@@ -539,7 +539,7 @@ function getElementsByClass(rootNode, elemName, className)
 <tr> <td class="prop"> Project :</td>
 <td class="proptext"> trami</td></tr>
 <tr> <td class="prop"> Build Time :</td>
-<td class="proptext"> 12/01/18 23:23:25</td></tr>
+<td class="proptext"> 12/03/18 22:45:02</td></tr>
 <tr> <td class="prop"> Device :</td>
 <td class="proptext"> CY8C4248LQI-BL583</td></tr>
 <tr> <td class="prop"> Temperature :</td>
@@ -603,18 +603,18 @@ Clock Summary Section</span>
 </thead> 
 <tbody>
 <tr> 
- <td class = "text_info">CapSense_SampleClk(FFB)</td>
- <td class = "text_info">CapSense_SampleClk(FFB)</td>
- <td class = "number">47.059&nbsp;kHz</td>
- <td class = "number">47.059&nbsp;kHz</td>
+ <td class = "text_info">CapSense_CSD_SampleClk(FFB)</td>
+ <td class = "text_info">CapSense_CSD_SampleClk(FFB)</td>
+ <td class = "number">94.118&nbsp;kHz</td>
+ <td class = "number">94.118&nbsp;kHz</td>
  <td class = "number"> N/A </td>
  <td class = "text_info"> </td>
 </tr>
 <tr> 
- <td class = "text_info">CapSense_SenseClk(FFB)</td>
- <td class = "text_info">CapSense_SenseClk(FFB)</td>
- <td class = "number">47.059&nbsp;kHz</td>
- <td class = "number">47.059&nbsp;kHz</td>
+ <td class = "text_info">CapSense_CSD_SenseClk(FFB)</td>
+ <td class = "text_info">CapSense_CSD_SenseClk(FFB)</td>
+ <td class = "number">94.118&nbsp;kHz</td>
+ <td class = "number">94.118&nbsp;kHz</td>
  <td class = "number"> N/A </td>
  <td class = "text_info"> </td>
 </tr>
@@ -629,24 +629,32 @@ Clock Summary Section</span>
 <tr> 
  <td class = "text_info">CyHFCLK</td>
  <td class = "text_info">CyHFCLK</td>
- <td class = "number">12.000&nbsp;MHz</td>
- <td class = "number">12.000&nbsp;MHz</td>
+ <td class = "number">24.000&nbsp;MHz</td>
+ <td class = "number">24.000&nbsp;MHz</td>
  <td class = "number"> N/A </td>
  <td class = "text_info"> </td>
 </tr>
 <tr> 
- <td class = "text_info">CapSense_SampleClk</td>
+ <td class = "text_info">CapSense_CSD_SampleClk</td>
  <td class = "text_info">CyHFCLK</td>
- <td class = "number">47.059&nbsp;kHz</td>
- <td class = "number">47.059&nbsp;kHz</td>
+ <td class = "number">94.118&nbsp;kHz</td>
+ <td class = "number">94.118&nbsp;kHz</td>
  <td class = "number"> N/A </td>
  <td class = "text_info"> </td>
 </tr>
 <tr> 
- <td class = "text_info">CapSense_SenseClk</td>
+ <td class = "text_info">CapSense_CSD_SenseClk</td>
  <td class = "text_info">CyHFCLK</td>
- <td class = "number">47.059&nbsp;kHz</td>
- <td class = "number">47.059&nbsp;kHz</td>
+ <td class = "number">94.118&nbsp;kHz</td>
+ <td class = "number">94.118&nbsp;kHz</td>
+ <td class = "number"> N/A </td>
+ <td class = "text_info"> </td>
+</tr>
+<tr> 
+ <td class = "text_info">UART_SCBCLK</td>
+ <td class = "text_info">CyHFCLK</td>
+ <td class = "number">1.412&nbsp;MHz</td>
+ <td class = "number">1.412&nbsp;MHz</td>
  <td class = "number"> N/A </td>
  <td class = "text_info"> </td>
 </tr>
@@ -669,8 +677,8 @@ Clock Summary Section</span>
 <tr> 
  <td class = "text_info">CyIMO</td>
  <td class = "text_info">CyIMO</td>
- <td class = "number">12.000&nbsp;MHz</td>
- <td class = "number">12.000&nbsp;MHz</td>
+ <td class = "number">24.000&nbsp;MHz</td>
+ <td class = "number">24.000&nbsp;MHz</td>
  <td class = "number"> N/A </td>
  <td class = "text_info"> </td>
 </tr>
@@ -685,16 +693,16 @@ Clock Summary Section</span>
 <tr> 
  <td class = "text_info">CyRouted1</td>
  <td class = "text_info">CyRouted1</td>
- <td class = "number">12.000&nbsp;MHz</td>
- <td class = "number">12.000&nbsp;MHz</td>
+ <td class = "number">24.000&nbsp;MHz</td>
+ <td class = "number">24.000&nbsp;MHz</td>
  <td class = "number"> N/A </td>
  <td class = "text_info"> </td>
 </tr>
 <tr> 
  <td class = "text_info">CySYSCLK</td>
  <td class = "text_info">CySYSCLK</td>
- <td class = "number">12.000&nbsp;MHz</td>
- <td class = "number">12.000&nbsp;MHz</td>
+ <td class = "number">24.000&nbsp;MHz</td>
+ <td class = "number">24.000&nbsp;MHz</td>
  <td class = "number"> N/A </td>
  <td class = "text_info"> </td>
 </tr>
@@ -703,6 +711,14 @@ Clock Summary Section</span>
  <td class = "text_info">CyWCO</td>
  <td class = "number">32.768&nbsp;kHz</td>
  <td class = "number">32.768&nbsp;kHz</td>
+ <td class = "number"> N/A </td>
+ <td class = "text_info"> </td>
+</tr>
+<tr> 
+ <td class = "text_info">UART_SCBCLK(FFB)</td>
+ <td class = "text_info">UART_SCBCLK(FFB)</td>
+ <td class = "number">1.412&nbsp;MHz</td>
+ <td class = "number">1.412&nbsp;MHz</td>
  <td class = "number"> N/A </td>
  <td class = "text_info"> </td>
 </tr>
@@ -2057,7 +2073,7 @@ PrISM_Clock</span>
 <tr> 
  <td class = "text_info">Net_79/q</td>
  <td class = "text_info">RED(0)_PAD</td>
- <td class = "number">22.055</td>
+ <td class = "number">21.663</td>
 </tr>
 <tr class="sta_path">
 <td class="sta_path"  colspan="3">
@@ -2090,10 +2106,10 @@ PrISM_Clock</span>
  <td class = "text_info">Net_79</td>
  <td class = "text_info">Net_79/q</td>
  <td class = "text_info">RED(0)/pin_input</td>
- <td class = "number">6.102</td>
+ <td class = "number">5.710</td>
 </tr>
 <tr> 
- <td class = "text_info">iocell8</td>
+ <td class = "text_info">iocell15</td>
  <td class = "text_info">P2[6]</td>
  <td class = "number">1</td>
  <td class = "text_info">RED(0)</td>
@@ -2126,7 +2142,7 @@ PrISM_Clock</span>
 <tr> 
  <td class = "text_info">Net_83/q</td>
  <td class = "text_info">BLUE(0)_PAD</td>
- <td class = "number">21.961</td>
+ <td class = "number">21.582</td>
 </tr>
 <tr class="sta_path">
 <td class="sta_path"  colspan="3">
@@ -2159,10 +2175,10 @@ PrISM_Clock</span>
  <td class = "text_info">Net_83</td>
  <td class = "text_info">Net_83/q</td>
  <td class = "text_info">BLUE(0)/pin_input</td>
- <td class = "number">5.772</td>
+ <td class = "number">5.393</td>
 </tr>
 <tr> 
- <td class = "text_info">iocell7</td>
+ <td class = "text_info">iocell14</td>
  <td class = "text_info">P3[7]</td>
  <td class = "number">1</td>
  <td class = "text_info">BLUE(0)</td>
@@ -2195,7 +2211,7 @@ PrISM_Clock</span>
 <tr> 
  <td class = "text_info">Net_80/q</td>
  <td class = "text_info">GREEN(0)_PAD</td>
- <td class = "number">21.303</td>
+ <td class = "number">21.280</td>
 </tr>
 <tr class="sta_path">
 <td class="sta_path"  colspan="3">
@@ -2228,10 +2244,10 @@ PrISM_Clock</span>
  <td class = "text_info">Net_80</td>
  <td class = "text_info">Net_80/q</td>
  <td class = "text_info">GREEN(0)/pin_input</td>
- <td class = "number">5.437</td>
+ <td class = "number">5.414</td>
 </tr>
 <tr> 
- <td class = "text_info">iocell9</td>
+ <td class = "text_info">iocell16</td>
  <td class = "text_info">P3[6]</td>
  <td class = "number">1</td>
  <td class = "text_info">GREEN(0)</td>

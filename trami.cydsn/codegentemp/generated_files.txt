@@ -13,18 +13,14 @@
   <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\cyfitteriar.inc" value="HEADER;;;;;" />
   <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\cyfitter.h" value="HEADER;;;;;" />
   <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\cydisabledsheets.h" value="HEADER;;;;;" />
-  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense.c" value="SOURCE_C;CortexM0;;;;CapSense" />
-  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense.h" value="HEADER;;;;;CapSense" />
-  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_PM.c" value="SOURCE_C;CortexM0;;;;CapSense" />
-  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_CSHL.c" value="SOURCE_C;CortexM0;;;;CapSense" />
-  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_CSHL.h" value="HEADER;;;;;CapSense" />
-  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_INT.c" value="SOURCE_C;CortexM0;;;;CapSense" />
-  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_TunerHelper.c" value="SOURCE_C;CortexM0;;;;CapSense" />
-  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_TunerHelper.h" value="HEADER;;;;;CapSense" />
-  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_SMS.c" value="SOURCE_C;CortexM0;;;;CapSense" />
-  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_SMS.h" value="HEADER;;;;;CapSense" />
-  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_PVT.h" value="HEADER;;;;;CapSense" />
-  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_IP.h" value="HEADER;;;;;CapSense" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_CSD.c" value="SOURCE_C;CortexM0;;;;CapSense_CSD" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_CSD.h" value="HEADER;;;;;CapSense_CSD" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_CSD_PM.c" value="SOURCE_C;CortexM0;;;;CapSense_CSD" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_CSD_INT.c" value="SOURCE_C;CortexM0;;;;CapSense_CSD" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_CSD_TunerHelper.c" value="SOURCE_C;CortexM0;;;;CapSense_CSD" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_CSD_TunerHelper.h" value="HEADER;;;;;CapSense_CSD" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_CSD_PVT.h" value="HEADER;;;;;CapSense_CSD" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_CSD_IP.h" value="HEADER;;;;;CapSense_CSD" />
   <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\BLE_gatt.h" value="HEADER;;;;;BLE" />
   <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\BLE.h" value="HEADER;;;;;BLE" />
   <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\BLE.c" value="SOURCE_C;CortexM0;;;;BLE" />
@@ -71,13 +67,38 @@
   <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\User_Button_PM.c" value="SOURCE_C;CortexM0;;;;User_Button" />
   <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\isr_button.c" value="SOURCE_C;CortexM0;;;;isr_button" />
   <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\isr_button.h" value="HEADER;;;;;isr_button" />
-  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_SampleClk.c" value="SOURCE_C;CortexM0;;;;CapSense_SampleClk" />
-  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_SampleClk.h" value="HEADER;;;;;CapSense_SampleClk" />
-  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_Sns_aliases.h" value="HEADER;;;;;CapSense_Sns" />
-  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_SenseClk.c" value="SOURCE_C;CortexM0;;;;CapSense_SenseClk" />
-  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_SenseClk.h" value="HEADER;;;;;CapSense_SenseClk" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART.c" value="SOURCE_C;CortexM0;;;;UART" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART.h" value="HEADER;;;;;UART" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_SPI_UART.h" value="HEADER;;;;;UART" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_SPI_UART.c" value="SOURCE_C;CortexM0;;;;UART" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_SPI_UART_INT.c" value="SOURCE_C;CortexM0;;;;UART" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_PM.c" value="SOURCE_C;CortexM0;;;;UART" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_UART.c" value="SOURCE_C;CortexM0;;;;UART" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_BOOT.c" value="SOURCE_C;CortexM0;;;;UART" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_UART_BOOT.c" value="SOURCE_C;CortexM0;;;;UART" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_PINS.h" value="HEADER;;;;;UART" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_SPI_UART_PVT.h" value="HEADER;;;;;UART" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_PVT.h" value="HEADER;;;;;UART" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_BOOT.h" value="HEADER;;;;;UART" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_CSD_SampleClk.c" value="SOURCE_C;CortexM0;;;;CapSense_CSD_SampleClk" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_CSD_SampleClk.h" value="HEADER;;;;;CapSense_CSD_SampleClk" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_CSD_Sns_aliases.h" value="HEADER;;;;;CapSense_CSD_Sns" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_CSD_SenseClk.c" value="SOURCE_C;CortexM0;;;;CapSense_CSD_SenseClk" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\CapSense_CSD_SenseClk.h" value="HEADER;;;;;CapSense_CSD_SenseClk" />
   <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\BLE_bless_isr.c" value="SOURCE_C;CortexM0;;;;BLE_bless_isr" />
   <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\BLE_bless_isr.h" value="HEADER;;;;;BLE_bless_isr" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_SCBCLK.c" value="SOURCE_C;CortexM0;;;;UART_SCBCLK" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_SCBCLK.h" value="HEADER;;;;;UART_SCBCLK" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_tx.c" value="SOURCE_C;CortexM0;;;;UART_tx" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_tx.h" value="HEADER;;;;;UART_tx" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_tx_aliases.h" value="HEADER;;;;;UART_tx" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_tx_PM.c" value="SOURCE_C;CortexM0;;;;UART_tx" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_SCB_IRQ.c" value="SOURCE_C;CortexM0;;;;UART_SCB_IRQ" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_SCB_IRQ.h" value="HEADER;;;;;UART_SCB_IRQ" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_rx.c" value="SOURCE_C;CortexM0;;;;UART_rx" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_rx.h" value="HEADER;;;;;UART_rx" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_rx_aliases.h" value="HEADER;;;;;UART_rx" />
+  <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\UART_rx_PM.c" value="SOURCE_C;CortexM0;;;;UART_rx" />
   <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\cy_em_eeprom.c" value="SOURCE_C;CortexM0;;;;Em_EEPROM_Dynamic" />
   <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\cy_em_eeprom.h" value="HEADER;;;;;Em_EEPROM_Dynamic" />
   <file name="C:\Users\rpasek\Documents\PSoC Creator\trami\trami.cydsn\codegentemp\cm0gcc.ld" value="LINKER_SCRIPT;;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />

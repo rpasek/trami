@@ -18,20 +18,22 @@
 ##################################################################### 
                     1::Clock Frequency Summary
 ===================================================================== 
-Number of clocks: 13
-Clock: CapSense_SampleClk       | N/A                   | Target: 0.05 MHz   | 
-Clock: CapSense_SampleClk(FFB)  | N/A                   | Target: 0.05 MHz   | 
-Clock: CapSense_SenseClk        | N/A                   | Target: 0.05 MHz   | 
-Clock: CapSense_SenseClk(FFB)   | N/A                   | Target: 0.05 MHz   | 
-Clock: CyECO                    | N/A                   | Target: 24.00 MHz  | 
-Clock: CyHFCLK                  | N/A                   | Target: 12.00 MHz  | 
-Clock: CyILO                    | N/A                   | Target: 0.03 MHz   | 
-Clock: CyIMO                    | N/A                   | Target: 12.00 MHz  | 
-Clock: CyLFCLK                  | N/A                   | Target: 0.03 MHz   | 
-Clock: CyRouted1                | N/A                   | Target: 12.00 MHz  | 
-Clock: CySYSCLK                 | N/A                   | Target: 12.00 MHz  | 
-Clock: CyWCO                    | N/A                   | Target: 0.03 MHz   | 
-Clock: PrISM_Clock              | Frequency: 87.58 MHz  | Target: 0.10 MHz   | 
+Number of clocks: 15
+Clock: CapSense_CSD_SampleClk       | N/A                   | Target: 0.09 MHz   | 
+Clock: CapSense_CSD_SampleClk(FFB)  | N/A                   | Target: 0.09 MHz   | 
+Clock: CapSense_CSD_SenseClk        | N/A                   | Target: 0.09 MHz   | 
+Clock: CapSense_CSD_SenseClk(FFB)   | N/A                   | Target: 0.09 MHz   | 
+Clock: CyECO                        | N/A                   | Target: 24.00 MHz  | 
+Clock: CyHFCLK                      | N/A                   | Target: 24.00 MHz  | 
+Clock: CyILO                        | N/A                   | Target: 0.03 MHz   | 
+Clock: CyIMO                        | N/A                   | Target: 24.00 MHz  | 
+Clock: CyLFCLK                      | N/A                   | Target: 0.03 MHz   | 
+Clock: CyRouted1                    | N/A                   | Target: 24.00 MHz  | 
+Clock: CySYSCLK                     | N/A                   | Target: 24.00 MHz  | 
+Clock: CyWCO                        | N/A                   | Target: 0.03 MHz   | 
+Clock: PrISM_Clock                  | Frequency: 87.58 MHz  | Target: 0.10 MHz   | 
+Clock: UART_SCBCLK                  | N/A                   | Target: 1.41 MHz   | 
+Clock: UART_SCBCLK(FFB)             | N/A                   | Target: 1.41 MHz   | 
 
  =====================================================================
                     End of Clock Frequency Summary
@@ -69,9 +71,9 @@ Port Name  Setup to Clk  Clock Name:Phase
 
 Port Name     Clock to Out  Clock Name:Phase  
 ------------  ------------  ----------------  
-BLUE(0)_PAD   22660         PrISM_Clock:R     
-GREEN(0)_PAD  22004         PrISM_Clock:R     
-RED(0)_PAD    22755         PrISM_Clock:R     
+BLUE(0)_PAD   22284         PrISM_Clock:R     
+GREEN(0)_PAD  21979         PrISM_Clock:R     
+RED(0)_PAD    22363         PrISM_Clock:R     
 
 
                          3.3::Pad to Pad

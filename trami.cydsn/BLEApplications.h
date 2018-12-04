@@ -49,7 +49,7 @@
 * handling in the firmware, ensuring low power consumption during project usage.
 * To disable, comment the following #define. 
 * If disabled, prevent usage of the project with coin cell */
-#define ENABLE_LOW_POWER_MODE
+//#define ENABLE_LOW_POWER_MODE
 	
 /* 'CAPSENSE_ENABLED' pre-processor directive enables CapSense functionality 
 * in the firmware. To disable CapSense, comment the following #define as well 

@@ -74,7 +74,34 @@
 * R-G-B LED 	- P2[6], P3[6] and P3[7] (hard-wired on the BLE Pioneer kit)
 * User Switch	- P2[7] (hard-wired on the BLE Pioneer kit)
 ******************************************************************************/
+#include <project.h>
+#include <interface.h>
 #include <main.h>
+
+
+/* Global variables */
+/* Global variables used because this is the method uProbe uses to access firmware data */
+/* CapSense tuning variables */
+uint8 modDac = SENSOR_MODDAC;               /* Modulation DAC current setting */
+uint8 compDac[NUMSENSORS] = {SENSOR_CMPDAC, SENSOR_CMPDAC, SENSOR_CMPDAC, SENSOR_CMPDAC, SENSOR_CMPDAC, SENSOR_CMPDAC, SENSOR_CMPDAC, SENSOR_CMPDAC, SENSOR_CMPDAC, SENSOR_CMPDAC, SENSOR_CMPDAC, SENSOR_CMPDAC}; /* Compensation DAC current setting */
+uint8 senseDivider = SENSOR_SENDIV;         /* Sensor clock divider */
+uint8 modDivider = SENSOR_MODDIV;           /* Modulation clock divider */
+/* Liquid Level variables */
+int32 sensorRaw[NUMSENSORS] = {0u};         /* Sensor raw counts */
+int32 sensorDiff[NUMSENSORS] = {0u};        /* Sensor difference counts */
+int16 sensorEmptyOffset[NUMSENSORS] = {0u}; /* Sensor counts when empty to calculate diff counts. Loaded from EEPROM array */
+const int16 CYCODE eepromEmptyOffset[] = {0u};/* Sensor counts when empty to calculate diff counts. Loaded from EEPROM array */
+int16 sensorScale[NUMSENSORS] = {0x01D0, 0x0100, 0x0100, 0x0100, 0x0100, 0x0100, 0x0100, 0x0100, 0x0100, 0x0100, 0x0100, 0x01C0}; /* Scaling factor to normalize sensor full scale counts. 0x0100 = 1.0 in fixed precision 8.8 */
+int32 sensorProcessed[NUMSENSORS] = {0u, 0u}; /* fixed precision 24.8 */
+uint16 sensorLimit = SENSORLIMIT;           /* Threshold for determining if a sensor is submerged. Set to half of SENSORMAX value */
+uint8 sensorActiveCount = 0u;               /* Number of sensors currently submerged */
+int32 levelPercent = 0u;                    /* fixed precision 24.8 */
+int32 levelMm = 0u;                         /* fixed precision 24.8 */   
+int32 sensorHeight = SENSORHEIGHT;          /* Height of a single sensor. Fixed precision 24.8 */
+uint8 calFlag = FALSE;                      /* Flag to signal when new sensor calibration values should be stored to EEPROM */
+/* Communication variables */
+uint16 delayMs = UART_DELAY;                /* Main loop delay in ms to control UART data log output speed */
+
 
 /* This flag is used by application to know whether a Central 
 * device has been connected. This is updated in BLE event callback 
@@ -111,11 +138,79 @@ uint8 initializeCapSenseBaseline = TRUE;
 *******************************************************************************/
 int main()
 {
+    uint8 i;
+    
 	/* This function will initialize the system resources such as BLE and CapSense */
     InitializeSystem();
 	
     for(;;)
     {
+	/* Check for CapSense scan complete*/
+        if(CapSense_CSD_IsBusy() == FALSE)
+        {
+            /* Delay to control data logging rate */
+            CyDelay(delayMs);
+            
+            /* Read and store new sensor raw counts*/
+            for(i = 0; i < NUMSENSORS; i++)
+            {
+                sensorRaw[i] = CapSense_CSD_ReadSensorRaw(i);
+                sensorDiff[i] = sensorRaw[i];
+            }
+
+            /* Start scan for next iteration */
+            CapSense_CSD_ScanEnabledWidgets();
+            
+            /* Check if we should store new empty offset calibration values */
+            if(calFlag == TRUE)
+            {
+                calFlag = FALSE;
+                StoreCalibration();
+            }
+            
+            /* Remove empty offset calibration from sensor raw counts and normalize sensor full count values */
+            for(i = 0; i < NUMSENSORS; i++)
+            {
+                sensorDiff[i] -= sensorEmptyOffset[i];
+                sensorProcessed[i] = (sensorDiff[i] * sensorScale[i]) >> 8;
+            }
+                      
+            /* Find the number of submerged sensors */
+            sensorActiveCount = 0;
+            for(i = 0; i < NUMSENSORS; i++)
+            {
+                if(sensorProcessed[i] > sensorLimit)
+                {
+                    /* First and last sensor are half the height of middle sensors */
+                    if((i == 0) || (i == NUMSENSORS - 1))
+                    {
+                        sensorActiveCount += 1;
+                    }
+                    /* Middle sensors are twice the height of 1st and last sensors */
+                    else
+                    {
+                        sensorActiveCount += 2;
+                    }
+                }
+            }
+            
+            /* Calculate liquid level height in mm */
+            levelMm = sensorActiveCount * (sensorHeight >> 1);
+            /* If level is near full value then round to full. Avoids fixed precision rounding errors */
+            if(levelMm > ((int32)LEVELMM_MAX << 8) - (sensorHeight >> 2))
+            {
+                levelMm = LEVELMM_MAX << 8;
+            }
+
+            /* Calculate level percent. Stored in fixed precision 24.8 format to hold fractional percent */
+            levelPercent = (levelMm * 100) / LEVELMM_MAX;
+            
+            /* Report level and process uProbe and UART interfaces */
+            ProcessUprobe();
+            ProcessUart();
+        }
+        
+
         /*Process event callback to handle BLE events. The events generated and 
 		* used for this application are inside the 'CustomEventHandler' routine*/
         CyBle_ProcessEvents();
@@ -166,7 +261,7 @@ int main()
 				initializeCapSenseBaseline = FALSE;
 				
 				/* Initialize all CapSense Baselines */
-				CapSense_InitializeAllBaselines();
+				// CapSense_InitializeAllBaselines();
 			}
 
 			/* Start Advertisement and enter Discoverable mode*/
@@ -190,6 +285,8 @@ int main()
 *******************************************************************************/
 void InitializeSystem(void)
 {
+	uint8 i;
+
 	/* Enable global interrupt mask */
 	CyGlobalIntEnable; 
 			
@@ -214,12 +311,18 @@ void InitializeSystem(void)
 	
 	/* Start the Button ISR to allow wakeup from sleep */
 	isr_button_StartEx(MyISR);
-	
-	#ifdef CAPSENSE_ENABLED
-	/*Initialize CapSense component and initialize baselines*/
-	CapSense_Start();
-	CapSense_InitializeAllBaselines();
-	#endif
+	 
+    /* Read stored empty offset values from EEPROM */
+    for(i = 0; i < NUMSENSORS; i++)
+    {
+        sensorEmptyOffset[i] = eepromEmptyOffset[i];
+    }
+    
+    /* Start CapSense and UART components */
+    CapSense_CSD_Start();	
+    CapSense_CSD_ScanEnabledWidgets();
+    UART_Start();  
+    InitialUartMessage();
 	
 	/* Set the Watchdog Interrupt vector to the address of Interrupt routine 
 	* WDT_INT_Handler. This routine counts the 3 seconds for LED ON state during
@@ -250,24 +353,9 @@ void HandleCapSenseSlider(void)
 
 	/* Present slider position read by CapSense */
 	uint16 sliderPosition;
-		
-	/* Scan the slider widget */
-	CapSense_ScanWidget(CapSense_LINEARSLIDER0__LS);
-	
-	/* Wait for CapSense scanning to be complete. This could take about 5 ms */
-	while(CapSense_IsBusy())
-	{
-		#ifdef ENABLE_LOW_POWER_MODE
-		/* Put CPU to Sleep while CapSense scanning is executing */
-		CySysPmSleep();
-		#endif
-	}
-	
-	/* Update CapSense baseline for next reading*/
-	CapSense_UpdateEnabledBaselines();
 	
 	/* Read the finger position on the slider */
-	sliderPosition = CapSense_GetCentroidPos(CapSense_LINEARSLIDER0__LS);	
+	sliderPosition = levelPercent / 100;
 
 	/* If finger position on the slider is changed then send data as BLE notifications */
 	if(sliderPosition != lastPosition)

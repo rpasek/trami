@@ -3,12 +3,10 @@
 GEN_SOURCE_DIR= Generated_Source/PSoC4
 
 GEN_C_SOURCE_CortexM0=\
-	$(GEN_SOURCE_DIR)/CapSense.c\
-	$(GEN_SOURCE_DIR)/CapSense_PM.c\
-	$(GEN_SOURCE_DIR)/CapSense_CSHL.c\
-	$(GEN_SOURCE_DIR)/CapSense_INT.c\
-	$(GEN_SOURCE_DIR)/CapSense_TunerHelper.c\
-	$(GEN_SOURCE_DIR)/CapSense_SMS.c\
+	$(GEN_SOURCE_DIR)/CapSense_CSD.c\
+	$(GEN_SOURCE_DIR)/CapSense_CSD_PM.c\
+	$(GEN_SOURCE_DIR)/CapSense_CSD_INT.c\
+	$(GEN_SOURCE_DIR)/CapSense_CSD_TunerHelper.c\
 	$(GEN_SOURCE_DIR)/BLE.c\
 	$(GEN_SOURCE_DIR)/BLE_gatt.c\
 	$(GEN_SOURCE_DIR)/BLE_eventHandler.c\
@@ -29,9 +27,22 @@ GEN_C_SOURCE_CortexM0=\
 	$(GEN_SOURCE_DIR)/User_Button.c\
 	$(GEN_SOURCE_DIR)/User_Button_PM.c\
 	$(GEN_SOURCE_DIR)/isr_button.c\
-	$(GEN_SOURCE_DIR)/CapSense_SampleClk.c\
-	$(GEN_SOURCE_DIR)/CapSense_SenseClk.c\
+	$(GEN_SOURCE_DIR)/UART.c\
+	$(GEN_SOURCE_DIR)/UART_SPI_UART.c\
+	$(GEN_SOURCE_DIR)/UART_SPI_UART_INT.c\
+	$(GEN_SOURCE_DIR)/UART_PM.c\
+	$(GEN_SOURCE_DIR)/UART_UART.c\
+	$(GEN_SOURCE_DIR)/UART_BOOT.c\
+	$(GEN_SOURCE_DIR)/UART_UART_BOOT.c\
+	$(GEN_SOURCE_DIR)/CapSense_CSD_SampleClk.c\
+	$(GEN_SOURCE_DIR)/CapSense_CSD_SenseClk.c\
 	$(GEN_SOURCE_DIR)/BLE_bless_isr.c\
+	$(GEN_SOURCE_DIR)/UART_SCBCLK.c\
+	$(GEN_SOURCE_DIR)/UART_tx.c\
+	$(GEN_SOURCE_DIR)/UART_tx_PM.c\
+	$(GEN_SOURCE_DIR)/UART_SCB_IRQ.c\
+	$(GEN_SOURCE_DIR)/UART_rx.c\
+	$(GEN_SOURCE_DIR)/UART_rx_PM.c\
 	$(GEN_SOURCE_DIR)/cy_em_eeprom.c\
 	$(GEN_SOURCE_DIR)/CyFlash.c\
 	$(GEN_SOURCE_DIR)/CyLib.c\

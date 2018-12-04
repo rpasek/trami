@@ -63,7 +63,7 @@ void HandleLowPowerMode(void)
 		
 		#ifdef CAPSENSE_ENABLED
 		/* Put CapSense to Sleep*/
-		CapSense_Sleep();
+		//CapSense_Sleep();
 		#endif
 		
 		/* Put BLESS into Deep Sleep and check the return status */
@@ -124,7 +124,7 @@ void HandleLowPowerMode(void)
 		
 		#ifdef CAPSENSE_ENABLED
 		/* Wakeup CapSense Block */
-		CapSense_Wakeup();
+		//CapSense_Wakeup();
 		#endif
 		
 	#endif
